@@ -13,7 +13,7 @@
             var cantidadElemento = 11;
             for (var i = 0; i < cantidadElemento; i++) {
                 $("#contenedor").append("<br>");
-                $("#contenedor").append("<select></select>");
+                $("#contenedor").append("<select><option>Seleccione el Modalidad</option> </select>");
             }
         });
     </script>
@@ -21,7 +21,17 @@
 
 <body>
     <div id="contenedor">
-
+        <?php
+            //llamas a la variable (que llama una funcion) y comienza el ciclo
+            foreach($ivo as $fila){
+                                        
+            ?>
+            <option value='<?php echo $fila[' tx_siglas '];?>'>
+                <?php echo $fila['tx_tipo_act'];?>
+            </option>
+            <?php
+            }
+            ?>
     </div>
 </body>
 
